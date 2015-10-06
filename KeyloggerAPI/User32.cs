@@ -4,7 +4,6 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace KeyloggerAPI
 {
@@ -27,10 +26,10 @@ namespace KeyloggerAPI
 		internal static extern IntPtr GetModuleHandle(string lpModuleName);
 
 		[DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
-		internal static extern short GetKeyState(Keys virtualKeyCode);
+		internal static extern short GetKeyState(KeyValue virtualKeyCode);
 
 		[DllImport("User32.dll")]
-		internal static extern short GetAsyncKeyState(System.Windows.Forms.Keys vKey);
+		internal static extern short GetAsyncKeyState(KeyValue vKey);
 
 		[DllImport("User32.dll")]
 		internal static extern int GetWindowText(int hwnd, StringBuilder s, int nMaxCount);
