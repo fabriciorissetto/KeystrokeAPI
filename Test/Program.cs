@@ -10,7 +10,7 @@ namespace ConsoleApplicationTest
 		{
 			using (var api = new API())
 			{
-				api.CreateKeyboardHook((character) => { Console.Write(character); });				
+				api.CreateKeyboardHook((character) => { Console.Write(character); });
 				Application.Run();
 			}
 		}

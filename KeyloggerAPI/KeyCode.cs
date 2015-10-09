@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace KeyloggerAPI
 {
-    internal enum KeyValue
-	{
-        Modifiers = -65536,
+    public enum KeyCode
+	{        
         None = 0,
         LButton = 1,
         RButton = 2,
@@ -201,6 +200,7 @@ namespace KeyloggerAPI
         KeyCode = 65535,
         Shift = 65536,
         Control = 131072,
-        Alt = 262144
-    }
+        Alt = 262144,
+		Modifiers = -65536
+	}
 }

