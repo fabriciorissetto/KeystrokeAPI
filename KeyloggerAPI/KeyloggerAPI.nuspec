@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>KeyloggerAPI</id>
+    <version>1.0.4</version>
+    <title>KeyloggerAPI</title>
+    <authors>Fabrício Rissetto</authors>    
+    <projectUrl>https://github.com/fabriciorissetto/KeyloggerAPI</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A simple Keylogger API written in C# that works for any version of Windows</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright 2015</copyright>
+    <tags>keylogger win32.dll keyboardhook keystroke</tags>
+  </metadata>  
+</package>

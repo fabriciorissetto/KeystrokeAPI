@@ -16,7 +16,7 @@ namespace KeyloggerAPI.CallbackObjects
 		internal KeyPressed(KeyCode keyCode, bool shiftPressed, bool capsLockOn, string currentWindow)
 		{
 			this.KeyCode = keyCode;
-			this.ShiftPressed = shiftPressed;
+			ShiftPressed = shiftPressed;
 			this.CapsLockOn = capsLockOn;
 			this.CurrentWindow = currentWindow;
         }
