@@ -1,7 +1,7 @@
 # KeyloggerAPI
 A simple Keylogger API written in C# that works for any version of Windows. It abstracts the access to the *win32.dll* and the handling of low level hooks (only keyboard for now). 
 
-### How to use
+## How to use
 **1 -** Call the *CreateKeyboardHook()* method passing your callback like this:
 
 ```c#
@@ -13,7 +13,7 @@ Application.Run();
 ```
 *NOTE: This call starts the windows message loop for you, but you will need to reference the System.Windows.Forms.dll in your project*. [Click here to know why].
 
-### 'Console Application' example:
+## 'Console Application' example:
 ```c#
 class Program
 {
