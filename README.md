@@ -1,5 +1,5 @@
 # KeyloggerAPI
-A simple Keylogger API written in C# that works for any version of Windows. It abstracts the access to the *win32.dll* and the manipulation of low level hooks (only keyboard for now). 
+A simple Keylogger API written in C# that works for any version of Windows. It abstracts the access to the *win32.dll* and the handling of low level hooks (only keyboard for now). 
 
 ## Instalation
 ```sh
