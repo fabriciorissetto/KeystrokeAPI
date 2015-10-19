@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KeyloggerAPI
+namespace Keystroke.API
 {
 	/// <summary>
 	/// Class to wrap the dependencies for the User32.dll

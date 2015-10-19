@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KeyloggerAPI
+namespace Keystroke.API
 {
     public enum KeyCode
 	{        

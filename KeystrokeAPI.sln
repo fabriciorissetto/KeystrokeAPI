@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyloggerAPI", "KeyloggerAPI\KeyloggerAPI.csproj", "{F6FEC17E-E22D-4149-A8A8-9F64C3C905D3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keystroke.API", "KeyloggerAPI\Keystroke.API.csproj", "{F6FEC17E-E22D-4149-A8A8-9F64C3C905D3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{B7AA4E23-39A4-49D5-859A-083C789BFEA2}"
 EndProject

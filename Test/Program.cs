@@ -1,4 +1,4 @@
-﻿using KeyloggerAPI;
+﻿using Keystroke.API;
 using System;
 using System.Windows.Forms;
 
@@ -8,7 +8,7 @@ namespace ConsoleApplicationTest
 	{
 		static void Main(string[] args)
 		{
-			using (var api = new API())
+			using (var api = new KeystrokeAPI())
 			{
 				api.CreateKeyboardHook((character) => { Console.Write(character); });
 				Application.Run();

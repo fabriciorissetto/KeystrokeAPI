@@ -1,4 +1,4 @@
-﻿using KeyloggerAPI.CallbackObjects;
+﻿using Keystroke.API.CallbackObjects;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace KeyloggerAPI
+namespace Keystroke.API
 {
-	public class API : IDisposable
+	public class KeystrokeAPI : IDisposable
 	{
 		private IntPtr globalKeyboardHookId;
 		private IntPtr currentModuleId;
@@ -21,7 +21,7 @@ namespace KeyloggerAPI
 
 		private Action<KeyPressed> keyPressedCallback;
 
-		public API()
+		public KeystrokeAPI()
 		{
 			Process currentProcess = Process.GetCurrentProcess();
 			ProcessModule currentModudle = currentProcess.MainModule;

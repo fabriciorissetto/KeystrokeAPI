@@ -5,10 +5,10 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("KeyloggerAPI")]
-[assembly: AssemblyDescription("A simple Keylogger API written in C# that works for any version of Windows")]
+[assembly: AssemblyTitle("Keystroke.API")]
+[assembly: AssemblyDescription("A simple Keystroke API written in C# that works for any version of Windows")]
 [assembly: AssemblyVersionAttribute("1.0.1")]
-[assembly: AssemblyProduct("KeyloggerAPI")]
+[assembly: AssemblyProduct("Keystroke.API")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyCompanyAttribute("Fabrício Rissetto")]
 
