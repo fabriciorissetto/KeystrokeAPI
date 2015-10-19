@@ -3,7 +3,7 @@ A simple Keystroke API written in C# that works for any version of Windows. It a
 
 ## Instalation
 ```sh
-Install-Package KeyloggerAPI
+Install-Package KeystrokeAPI
 ```
 ## How to use
 
