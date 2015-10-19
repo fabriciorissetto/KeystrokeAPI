@@ -52,7 +52,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\KeyloggerAPI\Keystroke.API.csproj">
+    <ProjectReference Include="..\Keystroke.API\Keystroke.API.csproj">
       <Project>{f6fec17e-e22d-4149-a8a8-9f64c3c905d3}</Project>
       <Name>Keystroke.API</Name>
     </ProjectReference>
