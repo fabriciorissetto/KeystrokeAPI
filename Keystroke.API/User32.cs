@@ -1,16 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Keystroke.API
 {
-	/// <summary>
-	/// Class to wrap the dependencies for the User32.dll
-	/// </summary>
-	internal static class User32
+    /// <summary>
+    /// Class to wrap the dependencies for the User32.dll
+    /// </summary>
+    internal static class User32
 	{
 		[DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
 		internal static extern IntPtr SetWindowsHookEx(int idHook, LowLevelHook lpfn, IntPtr hMod, uint dwThreadId);

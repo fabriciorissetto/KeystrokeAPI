@@ -1,16 +1,12 @@
 ﻿using Keystroke.API.CallbackObjects;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Keystroke.API
 {
-	public class KeystrokeAPI : IDisposable
+    public class KeystrokeAPI : IDisposable
 	{
 		private IntPtr globalKeyboardHookId;
 		private IntPtr currentModuleId;
@@ -69,7 +65,7 @@ namespace Keystroke.API
 			if ((textLength <= 0) || (textLength > title.Length))
 				return "[Unknown]";
 
-			return $"[{title}]";
+			return "[" + title + "]";
 		}
 
 		private bool FirstBitIsTurnedOn(short value)

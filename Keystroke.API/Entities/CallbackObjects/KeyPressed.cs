@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Keystroke.API.CallbackObjects
+﻿namespace Keystroke.API.CallbackObjects
 {
-	public class KeyPressed
+    public class KeyPressed
 	{
 		public KeyCode KeyCode { get; set; }
 		public bool CapsLockOn { get; set; }
