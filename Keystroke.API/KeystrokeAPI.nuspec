@@ -7,9 +7,23 @@
     <authors>Fabrício Rissetto</authors>    
     <projectUrl>https://github.com/fabriciorissetto/KeystrokeAPI</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>A simple KeystrokeAPI API written in C# that works for any version of Windows</description>
+    <description>
+		A simple Keystroke API written in C# that works for any version of Windows. It may be used to achieve a lot of purposes like create keyloggers, perform tasks through shortcuts, etc.</description>
     <releaseNotes></releaseNotes>
     <copyright>Copyright 2015</copyright>
     <tags>keylogger win32.dll keyboardhook keystroke</tags>
   </metadata>  
+  <files>        
+        <file src="lib\net46\KeystrokeAPI.dll" target="lib\net46\KeystrokeAPI.dll" />
+        <file src="lib\net46\KeystrokeAPI.pdb" target="lib\net46\KeystrokeAPI.pdb" />
+        
+        <file src="lib\net45\KeystrokeAPI.dll" target="lib\net45\KeystrokeAPI.dll" />
+        <file src="lib\net45\KeystrokeAPI.pdb" target="lib\net45\KeystrokeAPI.pdb" />
+        
+        <file src="lib\net40\KeystrokeAPI.dll" target="lib\net40\KeystrokeAPI.dll" />
+        <file src="lib\net40\KeystrokeAPI.pdb" target="lib\net40\KeystrokeAPI.pdb" />
+        
+        <file src="lib\net35\KeystrokeAPI.dll" target="lib\net35\KeystrokeAPI.dll" />
+        <file src="lib\net35\KeystrokeAPI.pdb" target="lib\net35\KeystrokeAPI.pdb" />
+    </files>
 </package>

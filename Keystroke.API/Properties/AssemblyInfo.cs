@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("Keystroke.API")]
 [assembly: AssemblyDescription("A simple Keystroke API written in C# that works for any version of Windows")]
-[assembly: AssemblyVersionAttribute("1.0.1")]
+[assembly: AssemblyVersionAttribute("1.0.6.2")]
 [assembly: AssemblyProduct("Keystroke.API")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyCompanyAttribute("Fabrício Rissetto")]
