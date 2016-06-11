@@ -19,7 +19,7 @@ Application.Run();
 *NOTE: This call starts the windows message loop for you, but you will need to reference the System.Windows.Forms.dll in your project*. [Click here to know why].
 
 
-## 'Console Application' example
+## Example (Using a Console Application) 
 ```c#
 class Program
 {
