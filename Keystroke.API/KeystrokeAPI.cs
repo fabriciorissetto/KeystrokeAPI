@@ -14,8 +14,8 @@ namespace Keystroke.API
 		private const int WH_MOUSE_LL = 14;
 		private const int WM_KEYDOWN = 0x100;
 		private const int WM_SYSKEYDOWN = 0x104;
-
-		private Action<KeyPressed> keyPressedCallback;
+        private User32.LowLevelHook HookKeyboardDelegate; //We need to have this delegate as a private field so the GC doenst collect it
+        private Action<KeyPressed> keyPressedCallback;
 
 		public KeystrokeAPI()
 		{
@@ -27,10 +27,11 @@ namespace Keystroke.API
 		public void CreateKeyboardHook(Action<KeyPressed> keyPressedCallback)
 		{
 			this.keyPressedCallback = keyPressedCallback;
-			this.globalKeyboardHookId = User32.SetWindowsHookEx(WH_KEYBOARD_LL, HookKeyboardCallback, this.currentModuleId, 0);
+            this.HookKeyboardDelegate = HookKeyboardCallbackImplementation;
+            this.globalKeyboardHookId = User32.SetWindowsHookEx(WH_KEYBOARD_LL, this.HookKeyboardDelegate, this.currentModuleId, 0);
 		}
 
-		private IntPtr HookKeyboardCallback(int nCode, IntPtr wParam, IntPtr lParam)
+		private IntPtr HookKeyboardCallbackImplementation(int nCode, IntPtr wParam, IntPtr lParam)
 		{
 			int wParamAsInt = wParam.ToInt32();
 
