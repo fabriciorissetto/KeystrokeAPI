@@ -7,9 +7,8 @@ using System.Runtime.InteropServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("Keystroke.API")]
 [assembly: AssemblyDescription("A simple Keystroke API written in C# that works for any version of Windows")]
-[assembly: AssemblyVersionAttribute("1.0.6.2")]
 [assembly: AssemblyProduct("Keystroke.API")]
-[assembly: AssemblyCopyright("Copyright ©  2015")]
+[assembly: AssemblyCopyright("Copyright © 2016")]
 [assembly: AssemblyCompanyAttribute("Fabrício Rissetto")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 

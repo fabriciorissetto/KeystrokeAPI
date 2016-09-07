@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>KeystrokeAPI</id>
-    <version>1.0.6</version>
+    <version>1.0.6.3</version>
     <title>KeystrokeAPI</title>
     <authors>Fabrício Rissetto</authors>    
     <projectUrl>https://github.com/fabriciorissetto/KeystrokeAPI</projectUrl>
@@ -10,7 +10,7 @@
     <description>
 		A simple Keystroke API written in C# that works for any version of Windows. It may be used to achieve a lot of purposes like create keyloggers, perform tasks through shortcuts, etc.</description>
     <releaseNotes></releaseNotes>
-    <copyright>Copyright 2015</copyright>
+    <copyright>Copyright 2016</copyright>
     <tags>keylogger win32.dll keyboardhook keystroke</tags>
   </metadata>  
   <files>        
@@ -27,3 +27,7 @@
         <file src="lib\net35\KeystrokeAPI.pdb" target="lib\net35\KeystrokeAPI.pdb" />
     </files>
 </package>
+<!-- 
+Command (from the .nuspec containing folder):
+nuget.exe pack KeystrokeAPI.nuspec -OutputDirectory ./NuGet/ -Symbols 
+-->
