@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>KeystrokeAPI</id>
-    <version>1.0.6.3</version>
+    <version>1.0.6.4</version>
     <title>KeystrokeAPI</title>
     <authors>Fabrício Rissetto</authors>    
     <projectUrl>https://github.com/fabriciorissetto/KeystrokeAPI</projectUrl>
@@ -28,6 +28,7 @@
     </files>
 </package>
 <!-- 
-Command (from the .nuspec containing folder):
+Update the version in this file and in the assemblyinfo.cs
+Then type the command (from the .nuspec containing folder):
 nuget.exe pack KeystrokeAPI.nuspec -OutputDirectory ./NuGet/ -Symbols 
 -->
