@@ -109,8 +109,8 @@
     <Exec WorkingDirectory="$(BuildDir)" Command="NuGet.exe push &quot;\NuGet\KeystrokeAPI.%(OutputAssemblyInfo.Version).nupkg&quot; -Verbosity detailed &quot;528824eb-cf70-45c3-8ac0-2a1ccf5d7c51&quot;" />
   </Target>
   <PropertyGroup>
-    <PostBuildEvent>xcopy $(ProjectDir)lib\net35\* $(ProjectDir)lib\net40\
-xcopy $(ProjectDir)lib\net35\* $(ProjectDir)lib\net45\
-xcopy $(ProjectDir)lib\net35\* $(ProjectDir)lib\net46\</PostBuildEvent>
+    <PostBuildEvent>xcopy /b/v/y $(ProjectDir)lib\net35\* $(ProjectDir)lib\net40\
+xcopy /b/v/y $(ProjectDir)lib\net35\* $(ProjectDir)lib\net45\
+xcopy /b/v/y $(ProjectDir)lib\net35\* $(ProjectDir)lib\net46\</PostBuildEvent>
   </PropertyGroup>
 </Project>
