@@ -169,6 +169,8 @@
         Oem2 = 191,
         Oemtilde = 192,
         Oem3 = 192,
+        LatinKeyboardBar = 193,
+        NumPadDot = 194,
         OemOpenBrackets = 219,
         Oem4 = 219,
         OemPipe = 220,
@@ -195,6 +197,6 @@
         Shift = 65536,
         Control = 131072,
         Alt = 262144,
-		Modifiers = -65536
+		Modifiers = -65536        
 	}
 }

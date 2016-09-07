@@ -13,7 +13,7 @@
             ShiftPressed = shiftPressed;
             this.CapsLockOn = capsLockOn;
             this.CurrentWindow = currentWindow;
-        }
+        }        
 
         public override string ToString()
         {
@@ -93,10 +93,10 @@
             if (KeyCode == KeyCode.Oemcomma) return ",";
             if (KeyCode == KeyCode.OemMinus) return "-";
             if (KeyCode == KeyCode.OemPeriod) return ".";
-            if ((int)KeyCode == 194) return ".";
+            if (KeyCode == KeyCode.NumPadDot) return ".";
 
             //PT-BR
-            if ((int)KeyCode == 193) return "/";
+            if (KeyCode == KeyCode.LatinKeyboardBar) return "/";
             if (KeyCode == KeyCode.Decimal) return ",";
             if (KeyCode == KeyCode.Oem1) return "ç";
             if (KeyCode == KeyCode.Oem2) return ";";
