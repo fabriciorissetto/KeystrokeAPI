@@ -1,4 +1,5 @@
 ﻿using Keystroke.API.CallbackObjects;
+using Keystroke.API.Helpers;
 using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
@@ -14,7 +15,7 @@ namespace Keystroke.API
 		private const int WH_MOUSE_LL = 14;
 		private const int WM_KEYDOWN = 0x100;
 		private const int WM_SYSKEYDOWN = 0x104;
-        private User32.LowLevelHook HookKeyboardDelegate; //We need to have this delegate as a private field so the GC doenst collect it
+        private User32.LowLevelHook HookKeyboardDelegate; //We need to have this delegate as a private field so the GC doesn't collect it
         private Action<KeyPressed> keyPressedCallback;
 
 		public KeystrokeAPI()
@@ -55,19 +56,7 @@ namespace Keystroke.API
 			//Chain to the next hook. Otherwise other applications that 
 			//are listening to this hook will not get notificied
 			return User32.CallNextHookEx(globalKeyboardHookId, nCode, wParam, lParam);
-		}
-
-		private static string CurrentWindowTitle()
-		{
-			int hwnd = User32.GetForegroundWindow();
-			StringBuilder title = new StringBuilder(1024);
-
-			int textLength = User32.GetWindowText(hwnd, title, title.Capacity);
-			if ((textLength <= 0) || (textLength > title.Length))
-				return "[Unknown]";
-
-			return "[" + title + "]";
-		}
+		}		
 
 		private bool FirstBitIsTurnedOn(short value)
 		{
@@ -79,7 +68,10 @@ namespace Keystroke.API
 		{
 			var keyValue = (KeyCode)Marshal.ReadInt32(lParam);
 
-			var key = new KeyPressed(keyValue, shiftPressed, capsLockPressed, CurrentWindowTitle());
+            var keyboardLayout = new KeyboardLayout().GetCurrentKeyboardLayout();
+            var windowTitle = new Window().CurrentWindowTitle();
+
+            var key = new KeyPressed(keyValue, shiftPressed, capsLockPressed, windowTitle, keyboardLayout.ToString());
 
 			keyPressedCallback.Invoke(key);
 		}

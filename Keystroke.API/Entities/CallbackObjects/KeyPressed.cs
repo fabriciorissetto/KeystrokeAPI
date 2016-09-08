@@ -6,13 +6,15 @@
         public bool CapsLockOn { get; set; }
         public bool ShiftPressed { get; set; }
         public string CurrentWindow { get; set; }
+        public string KeyboardLayout { get; set; }
 
-        internal KeyPressed(KeyCode keyCode, bool shiftPressed, bool capsLockOn, string currentWindow)
+        internal KeyPressed(KeyCode keyCode, bool shiftPressed, bool capsLockOn, string currentWindow, string keyboardLayout)
         {
             this.KeyCode = keyCode;
-            ShiftPressed = shiftPressed;
+            this.ShiftPressed = shiftPressed;
             this.CapsLockOn = capsLockOn;
             this.CurrentWindow = currentWindow;
+            this.KeyboardLayout = keyboardLayout;
         }        
 
         public override string ToString()
@@ -95,26 +97,28 @@
             if (KeyCode == KeyCode.OemPeriod) return ".";
             if (KeyCode == KeyCode.NumPadDot) return ".";
 
-            //PT-BR
-            if (KeyCode == KeyCode.LatinKeyboardBar) return "/";
-            if (KeyCode == KeyCode.Decimal) return ",";
-            if (KeyCode == KeyCode.Oem1) return "ç";
-            if (KeyCode == KeyCode.Oem2) return ";";
-            if (KeyCode == KeyCode.Oem3) return "`";
-            if (KeyCode == KeyCode.Oem4) return "´";
-            if (KeyCode == KeyCode.Oem5) return @"]";
-            if (KeyCode == KeyCode.Oem6) return "[";
-            if (KeyCode == KeyCode.Oem7) return "~";
+            if (KeyboardLayout == "pt-BR")
+            {
+                if (KeyCode == KeyCode.LatinKeyboardBar) return "/";
+                if (KeyCode == KeyCode.Decimal) return ",";
+                if (KeyCode == KeyCode.Oem1) return "ç";
+                if (KeyCode == KeyCode.Oem2) return ";";
+                if (KeyCode == KeyCode.Oem3) return "`";
+                if (KeyCode == KeyCode.Oem4) return "´";
+                if (KeyCode == KeyCode.Oem5) return @"]";
+                if (KeyCode == KeyCode.Oem6) return "[";
+                if (KeyCode == KeyCode.Oem7) return "~";
+            }
 
             //EN-US
-            //if (KeyCode == KeyCode.Decimal) return ".";
-            //if (KeyCode == KeyCode.Oem1) return ";";
-            //if (KeyCode == KeyCode.Oem2) return "/";
-            //if (KeyCode == KeyCode.Oem3) return "`";
-            //if (KeyCode == KeyCode.Oem4) return "[";
-            //if (KeyCode == KeyCode.Oem5) return "\\";
-            //if (KeyCode == KeyCode.Oem6) return "]";
-            //if (KeyCode == KeyCode.Oem7) return "'";
+            if (KeyCode == KeyCode.Decimal) return ".";
+            if (KeyCode == KeyCode.Oem1) return ";";
+            if (KeyCode == KeyCode.Oem2) return "/";
+            if (KeyCode == KeyCode.Oem3) return "`";
+            if (KeyCode == KeyCode.Oem4) return "[";
+            if (KeyCode == KeyCode.Oem5) return "\\";
+            if (KeyCode == KeyCode.Oem6) return "]";
+            if (KeyCode == KeyCode.Oem7) return "'";
 
             if (KeyCode == KeyCode.NumPad0) return "0";
             if (KeyCode == KeyCode.NumPad1) return "1";
@@ -183,23 +187,25 @@
             if (KeyCode == KeyCode.Oemplus) return "+";
             if ((int)KeyCode == 193) return "?";
 
-            //PT-BR
-            if (KeyCode == KeyCode.Oem1) return "Ç";
-            if (KeyCode == KeyCode.Oem2) return ":";
-            if (KeyCode == KeyCode.Oem3) return "\"";
-            if (KeyCode == KeyCode.Oem4) return "`";
-            if (KeyCode == KeyCode.Oem5) return "}";
-            if (KeyCode == KeyCode.Oem6) return "{";
-            if (KeyCode == KeyCode.Oem7) return "^";
+            if (KeyboardLayout == "pt-BR")
+            {
+                if (KeyCode == KeyCode.Oem1) return "Ç";
+                if (KeyCode == KeyCode.Oem2) return ":";
+                if (KeyCode == KeyCode.Oem3) return "\"";
+                if (KeyCode == KeyCode.Oem4) return "`";
+                if (KeyCode == KeyCode.Oem5) return "}";
+                if (KeyCode == KeyCode.Oem6) return "{";
+                if (KeyCode == KeyCode.Oem7) return "^";
+            }
 
             //EN-US
-            //if (KeyCode == KeyCode.Oem1) return ":";
-            //if (KeyCode == KeyCode.Oem2) return "?";
-            //if (KeyCode == KeyCode.Oem3) return "~";
-            //if (KeyCode == KeyCode.Oem4) return "{";
-            //if (KeyCode == KeyCode.Oem5) return "|";
-            //if (KeyCode == KeyCode.Oem6) return "}";
-            //if (KeyCode == KeyCode.Oem7) return "\"";
+            if (KeyCode == KeyCode.Oem1) return ":";
+            if (KeyCode == KeyCode.Oem2) return "?";
+            if (KeyCode == KeyCode.Oem3) return "~";
+            if (KeyCode == KeyCode.Oem4) return "{";
+            if (KeyCode == KeyCode.Oem5) return "|";
+            if (KeyCode == KeyCode.Oem6) return "}";
+            if (KeyCode == KeyCode.Oem7) return "\"";
 
             //Character not "shiftable"
             return character;

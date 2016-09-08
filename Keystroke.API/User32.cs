@@ -34,6 +34,12 @@ namespace Keystroke.API
 		[DllImport("User32.dll")]
 		internal static extern int GetForegroundWindow();
 
-		internal delegate IntPtr LowLevelHook(int nCode, IntPtr wParam, IntPtr lParam);
-	}
+        [DllImport("user32.dll")]
+        internal static extern uint GetWindowThreadProcessId(IntPtr hwnd, IntPtr proccess);
+
+        [DllImport("user32.dll")]
+        internal static extern IntPtr GetKeyboardLayout(uint thread);
+
+        internal delegate IntPtr LowLevelHook(int nCode, IntPtr wParam, IntPtr lParam);        
+    }
 }

@@ -77,6 +77,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\KeyboardLayout.cs" />
+    <Compile Include="Helpers\Window.cs" />
     <Compile Include="KeystrokeAPI.cs" />
     <Compile Include="Entities\KeyCode.cs" />
     <Compile Include="Entities\CallbackObjects\KeyPressed.cs" />
