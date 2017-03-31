@@ -23,14 +23,14 @@ Application.Run();
 ```c#
 class Program
 {
-	static void Main(string[] args)
-	{
-		using (var api = new KeystrokeAPI())
-		{
-			api.CreateKeyboardHook((character) => { Console.Write(character); });
-			Application.Run();
-		}
-	}
+    static void Main(string[] args)
+    {
+        using (var api = new KeystrokeAPI())
+        {
+            api.CreateKeyboardHook((character) => { Console.Write(character); });
+            Application.Run();
+        }
+    }
 }
 ```
 
