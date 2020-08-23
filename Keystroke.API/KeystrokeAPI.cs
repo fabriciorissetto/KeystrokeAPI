@@ -78,7 +78,7 @@ namespace Keystroke.API
 
 		public void Dispose()
 		{
-			if (globalKeyboardHookId == IntPtr.Zero)
+			if (globalKeyboardHookId != IntPtr.Zero)
 				User32.UnhookWindowsHookEx(globalKeyboardHookId);
 		}
 	}
