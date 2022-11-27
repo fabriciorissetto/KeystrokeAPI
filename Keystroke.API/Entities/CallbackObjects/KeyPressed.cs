@@ -1,4 +1,6 @@
-﻿namespace Keystroke.API.CallbackObjects
+﻿using System;
+
+namespace Keystroke.API.CallbackObjects
 {
     public class KeyPressed
     {
