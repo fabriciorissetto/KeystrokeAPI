@@ -49,7 +49,7 @@ namespace Keystroke.API
 				//because GetAsyncKeyState only verifies if it is "PRESSED" at the moment
 				if (User32.GetKeyState(KeyCode.Capital) == 1)
 					capsLockActive = true;
-
+				
 				KeyParser(wParam, lParam, shiftPressed, capsLockActive);
 			}
 
